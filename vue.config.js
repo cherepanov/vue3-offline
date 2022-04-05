@@ -5,10 +5,13 @@ module.exports = {
     themeColor: mainColor,
     msTileColor: mainColor,
     workboxOptions: {
-      skipWaiting: true,
-      clientsClaim: true
+      maximumFileSizeToCacheInBytes: 30 * 1024 * 1024,
+      // strategy: 'StaleWhileRevalidate',
+      swSrc: './src/sw/sw.js'
     },
-    name: '',
+    name: 'vue3_pwa',
+    appleMobileWebAppCapable: 'yes',
+    workboxPluginMode: 'InjectManifest',
     manifestOptions: {
       background_color: mainColor,
       theme_color: mainColor,
